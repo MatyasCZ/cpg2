@@ -3,7 +3,7 @@ def levensteinova_vzdalenost(dotaz1, dotaz2):
     Levensteinova vzdalenost říka, jak jsou 2 řetězce rozdílné, pokud jsou stejné je Levensteinova vzdalenost 0,
     pro řetězce "čas" a "čaj" je Levensteinova vzdalenost 1 (liší se v 1 písmenu)
     """
-
+    pass
 
 if __name__ == "__main__":
 
