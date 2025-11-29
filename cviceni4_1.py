@@ -1,13 +1,15 @@
 import math
+from abc import ABC, abstractmethod
 
-class Tvar:
+class Tvar(ABC):
+    @abstractmethod
     def obsah(self):
-        return 0
-    
+        pass
+
 class Kruh(Tvar):
     def __init__(self, polomer):
         self.polomer = polomer
-
+    
     def obsah(self):
         return math.pi * self.polomer ** 2
 
@@ -15,16 +17,16 @@ class Obdelnik(Tvar):
     def __init__(self, sirka, delka):
         self.sirka = sirka
         self.delka = delka
-
+    
     def obsah(self):
         return self.sirka * self.delka
-    
+
 class Ctverec(Obdelnik):
     def __init__(self, strana):
         super().__init__(strana, strana)
 
 if __name__ == "__main__":
-    tvary = [Kruh(2), Kruh(3), Obdelnik(2, 5), Ctverec(5)]
+    tvary = [Kruh(2), Kruh(3), Obdelnik(2, 5), Kruh(1), Ctverec(5)]
     celkovy_obsah = 0
     for tvar in tvary:
         celkovy_obsah += tvar.obsah()
