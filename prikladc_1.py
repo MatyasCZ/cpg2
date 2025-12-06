@@ -5,6 +5,15 @@
 
 def filtruj_cisla(typ, cisla):
     vysledek = []
+    for cislo in cisla:
+        if typ == "kladna" and cislo > 0:
+            vysledek.append(cislo)
+        elif typ == "zaporna" and cislo < 0:
+            vysledek.append(cislo)
+        elif typ == "suda" and cislo % 2 == 0:
+            vysledek.append(cislo)
+        elif typ == "licha" and cislo % 2 != 0:
+            vysledek.append(cislo)
 
     # Vaše řešení zde
  
