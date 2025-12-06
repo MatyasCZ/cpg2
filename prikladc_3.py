@@ -24,14 +24,15 @@ class Zamestnanec(ABC):
 # Programator dostava 10% navíc proti mzdě vypočítané metodou vypocitej_mzdu ve tride Zamestnanec
 class Programator(Zamestnanec):
     def __init__(self, jmeno, zakladni_mzda):
-        super().__init__(jmeno, zakladni_mzda)
-    vypocitej_mzdu = zakladni_mzda * 0,10
-    def __str__(self) -> str:
-        
-        
-        
+        super().__init__(jmeno, zakladni_mzda) # vezme parametry z nadřazené třídy zaměstnanec
 
-
+    def vypocitej_mzdu(self):
+        zakladni_mzda = super().vypocitej_mzdu()
+        return zakladni_mzda * 1.10
+# funkce vezme základní mzdu a přidá 10% k základní mzdě
+    def __str__(self):
+        return f"Programator {self.jmeno}, odpracovanych let {self.pocet_odpracovanych_let}, zakladni mzda {self.zakladni_mzda} Kc"
+#vypíše nám  jméno, odpracované roky a mzdu
 # Vytvorte tridu Manazer, ktera dedi od Zamestnanec
 # konstruktor tridy Manazer prijima navic parametr pocet_podrizenych
 # Manazer dostava 1000 Kc navíc za každého podřízeného zaměstnance nad rámec mzdy
@@ -41,8 +42,12 @@ class Manazer(Zamestnanec):
         super().__init__(jmeno, zakladni_mzda)
         self.pocet_podrizenych = pocet_podrizenych
 
+    def vypocitej_mzdu(self):
+        zakladni_mzda = super().vypocitej_mzdu()
+        return zakladni_mzda  + (1000 * self.pocet_podrizenych)
+
     def __str__(self):
-        return f""
+        return f"Manazer {self.jmeno}, odpracovanych let {self.pocet_odpracovanych_let}, zakladni mzda {self.zakladni_mzda} Kc, podrizenych {self.pocet_podrizenych}"
 
 if __name__ == "__main__":
     p1 = Programator("Alice", 40000)
