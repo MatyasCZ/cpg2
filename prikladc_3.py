@@ -41,11 +41,12 @@ class Manazer(Zamestnanec):
     def __init__(self, jmeno, zakladni_mzda, pocet_podrizenych):
         super().__init__(jmeno, zakladni_mzda)
         self.pocet_podrizenych = pocet_podrizenych
-
+#vezme parametry z nadřazené třídy zaměstnanec
     def vypocitej_mzdu(self):
         zakladni_mzda = super().vypocitej_mzdu()
         return zakladni_mzda  + (1000 * self.pocet_podrizenych)
-
+# přidá za každého podřízeného 1000 k základní mzdě
+# vypíše nám jméno manažera, odpracované roky, základní mzdu, počet podřízených
     def __str__(self):
         return f"Manazer {self.jmeno}, odpracovanych let {self.pocet_odpracovanych_let}, zakladni mzda {self.zakladni_mzda} Kc, podrizenych {self.pocet_podrizenych}"
 

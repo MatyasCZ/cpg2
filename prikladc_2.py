@@ -9,13 +9,9 @@ import sys
 
 def spocitej_statistiku(text):
 
-    pocet_radku = 0
-    pocet_slov = 0
-    pocet_znaku = 0
-
-    pocet_radku = len(text.splitlines(True))
-    pocet_slov = len(text.split())
-    pocet_znaku = len(text)
+    pocet_radku = len(text.splitlines()) # vypíše počet řádku
+    pocet_slov = len(text.split())         # vypíše počet slov
+    pocet_znaku = len(text)             # vypíše počet znaků
 
     return pocet_radku, pocet_slov, pocet_znaku
 
