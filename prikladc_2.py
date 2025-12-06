@@ -13,7 +13,9 @@ def spocitej_statistiku(text):
     pocet_slov = 0
     pocet_znaku = 0
 
-    # Vaše řešení zde
+    pocet_radku = len(text.splitlines(True))
+    pocet_slov = len(text.split())
+    pocet_znaku = len(text)
 
     return pocet_radku, pocet_slov, pocet_znaku
 
